@@ -1,0 +1,28 @@
+resources:
+  - name: test_action
+    type: GitRepo
+    configuration:
+    gitProvider: hmitgangGithub
+    path: hmitgang/test-action
+    buildOn:
+      commit: false  # Optionally true, but won't show each commit's status in Github
+      pullRequestCreate: true
+    cancelPendingRunsOn:
+      pullRequestUpdate: true  # Optional
+
+
+pipelines:
+  - name: harrisonmTest
+    steps:
+      - name: step1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: test_action
+              trigger: true
+        execution:
+          onExecute:
+            - echo "Hello world!"
+            - cd $res_test_action_resourcePath
+            - ls
+            - test -f test.txt
