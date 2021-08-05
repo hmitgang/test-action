@@ -5,8 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     name: JFrog Pipelines
     steps:
+      - name: Check out the private repo
+        uses: actions/checkout@v2
+        with:
+          repository: "jfrog/pipelines-github-action"
+          ref: 'v1.0'
+          token: ${{ secrets.github_PAT }}
+
       - name: Check JFrog Pipeline's status
-        uses: jfrog/pipelines-github-action@v1.0
+        uses: ./
         with:
           pipeline-name: "harrisonmActionsTest"
           RT_TOKEN: ${{ secrets.RT_TOKEN }}
