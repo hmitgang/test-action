@@ -8,6 +8,6 @@ jobs:
       - name: Check JFrog Pipeline's status
         uses: jfrog/pipelines-github-action
         with:
-          pipeline-name: "<your pipeline name>"
+          pipeline-name: "harrisonmActionsTest"
           RT_TOKEN: ${{ secrets.RT_TOKEN }}
           RT_URL: ${{ secrets.RT_URL }}
