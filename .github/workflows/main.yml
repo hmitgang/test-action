@@ -10,7 +10,7 @@ jobs:
         with:
           repository: "jfrog/pipelines-github-action"
           ref: 'v1.0'
-          token: ${{ secrets.github_PAT }}
+          token: ${{ secrets.GITHUBPAT }}
 
       - name: Check JFrog Pipeline's status
         uses: ./
