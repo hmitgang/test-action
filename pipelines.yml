@@ -12,7 +12,7 @@ resources:
 
 
 pipelines:
-  - name: harrisonmTest
+  - name: harrisonmActionsTest
     steps:
       - name: step1
         type: Bash
