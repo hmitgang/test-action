@@ -2,13 +2,13 @@ resources:
   - name: test_action
     type: GitRepo
     configuration:
-    gitProvider: hmitgangGithub
-    path: hmitgang/test-action
-    buildOn:
-      commit: false  # Optionally true, but won't show each commit's status in Github
-      pullRequestCreate: true
-    cancelPendingRunsOn:
-      pullRequestUpdate: true  # Optional
+      gitProvider: hmitgangGithub
+      path: hmitgang/test-action
+      buildOn:
+        commit: false  # Optionally true, but won't show each commit's status in Github
+        pullRequestCreate: true
+      cancelPendingRunsOn:
+        pullRequestUpdate: true  # Optional
 
 
 pipelines:
