@@ -6,7 +6,7 @@ jobs:
     name: JFrog Pipelines
     steps:
       - name: Check JFrog Pipeline's status
-        uses: jfrog/pipelines-github-action
+        uses: jfrog/pipelines-github-action@v1.0
         with:
           pipeline-name: "harrisonmActionsTest"
           RT_TOKEN: ${{ secrets.RT_TOKEN }}
