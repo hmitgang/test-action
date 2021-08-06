@@ -28,4 +28,4 @@ pipelines:
             - cd $res_test_action_resourcePath
             - ls
             - printenv
-            - test -f test.txt
+            - test -f file.txt
