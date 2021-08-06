@@ -4,6 +4,8 @@ resources:
     configuration:
       gitProvider: hmitgangGithub
       path: hmitgang/test-action
+      branches:
+        include: ^{{gitBranch}}$
       buildOn:
         commit: false  # Optionally true, but won't show each commit's status in Github
         pullRequestCreate: true
