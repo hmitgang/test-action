@@ -27,4 +27,5 @@ pipelines:
             - echo "Hello world!"
             - cd $res_test_action_resourcePath
             - ls
+            - printenv
             - test -f test.txt
