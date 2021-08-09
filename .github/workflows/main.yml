@@ -1,4 +1,4 @@
-on: [pull_request, create]
+on: [pull_request_target, create]
 
 jobs:
   check_pipelines:
