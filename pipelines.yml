@@ -24,10 +24,5 @@ pipelines:
               trigger: true
         execution:
           onExecute:
-            - echo "Hello world!"
-            - printenv
             - cd $res_test_action_resourcePath
-            - ls
-            - echo "Hello from the pipelines.yml file specified in branch master"
-            - echo "Branch triggered by {{gitBranch}}. Head ref $res_test_action_headCommitRef"
             - test -f file.txt
