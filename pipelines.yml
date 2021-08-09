@@ -7,7 +7,7 @@ resources:
       branches:
         include: ^{{gitBranch}}$
       buildOn:
-        commit: false  # Optionally true, but won't show each commit's status in Github
+        commit: true  # Optionally true, but won't show each commit's status in Github
         pullRequestCreate: true
       cancelPendingRunsOn:
         pullRequestUpdate: true  # Optional
@@ -25,8 +25,9 @@ pipelines:
         execution:
           onExecute:
             - echo "Hello world!"
+            - printenv
             - cd $res_test_action_resourcePath
+            - ls
             - echo "Hello from the pipelines.yml file specified in branch master"
             - echo "Branch triggered by {{gitBranch}}. Head ref $res_test_action_headCommitRef"
-            - printenv
             - test -f file.txt
