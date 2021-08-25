@@ -26,3 +26,23 @@ pipelines:
           onExecute:
             - cd $res_test_action_resourcePath
             - test -f file.txt
+            - "false"
+            - echo "this"
+          onFailure:
+            - echo "failed"
+      - name: step2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step1
+              status:
+                - success
+                - failure
+                - error
+                - cancelled
+                - skipped
+                - unstable
+                - timeout
+        execution:
+          onExecute:
+            - echo "Hello world!"
